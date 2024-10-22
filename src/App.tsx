@@ -56,10 +56,9 @@ function App() {
         </button>
         {recommendation && (
           <div className="mt-8 text-center">
-            <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{t('recommendation')}</p>
-            <div className="flex items-center justify-center text-4xl font-bold text-indigo-600 dark:text-indigo-400">
-              <MapPin className="w-8 h-8 mr-2" />
-              {recommendation}
+            <p className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">{t('recommendation')}</p>
+            <div className="bg-yellow-100 rounded-lg p-6 shadow-inner">
+              <p className="text-5xl font-bold text-blue-700 break-words leading-tight">{recommendation}</p>
             </div>
           </div>
         )}

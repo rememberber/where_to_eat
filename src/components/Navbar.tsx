@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Home } from 'lucide-react'; // 引入矢量图标
+import { Home } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const { i18n } = useTranslation();
@@ -8,15 +8,15 @@ const Navbar: React.FC = () => {
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    setMenuOpen(false); // 选择语言后收起菜单
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="bg-white bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-75 fixed top-0 left-0 right-0 z-50 shadow-md">
+    <nav className="bg-white bg-opacity-75 dark:bg-gray-800 dark:bg-opacity-75 fixed top-0 left-0 right-0 z-50 shadow-md backdrop-filter backdrop-blur-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Home className="text-indigo-600 dark:text-indigo-400 w-8 h-8" /> {/* 使用矢量图标 */}
+            <Home className="text-indigo-600 dark:text-indigo-400 w-8 h-8" />
           </div>
           <div className="ml-4 flex items-center md:ml-6">
             <div className="relative">

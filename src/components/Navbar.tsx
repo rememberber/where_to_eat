@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Home } from 'lucide-react'; // 引入矢量图标
 
 const Navbar: React.FC = () => {
   const { i18n } = useTranslation();
@@ -15,7 +16,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="text-xl font-bold text-indigo-600 dark:text-indigo-400">My App</div>
+            <Home className="text-indigo-600 dark:text-indigo-400 w-8 h-8" /> {/* 使用矢量图标 */}
           </div>
           <div className="ml-4 flex items-center md:ml-6">
             <div className="relative">

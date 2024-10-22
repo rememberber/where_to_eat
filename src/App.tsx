@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Utensils, MapPin } from 'lucide-react';
+import Navbar from './components/Navbar'; // 引入导航栏组件
 
 const restaurants = {
   building1: {
@@ -34,13 +35,10 @@ function App() {
     setRecommendation(getRandomRestaurant());
   };
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-4">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full">
+      <Navbar /> {/* 渲染导航栏组件 */}
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full mt-16"> {/* 添加 mt-16 以避免导航栏遮挡 */}
         <h1 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-6">{t('title')}</h1>
         <div className="flex justify-center mb-6">
           <Utensils className="w-16 h-16 text-indigo-500 dark:text-indigo-300" />
@@ -62,10 +60,6 @@ function App() {
             </div>
           </div>
         )}
-        <div className="mt-4 flex justify-center space-x-4">
-          <button onClick={() => changeLanguage('en')} className="px-4 py-2 bg-gray-200 rounded">English</button>
-          <button onClick={() => changeLanguage('zh')} className="px-4 py-2 bg-gray-200 rounded">简体中文</button>
-        </div>
       </div>
     </div>
   );

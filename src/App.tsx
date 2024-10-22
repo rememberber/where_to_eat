@@ -57,8 +57,8 @@ function App() {
         {recommendation && (
           <div className="mt-8 text-center">
             <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">{t('recommendation')}</p>
-            <div className="flex items-center justify-center text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-              <MapPin className="w-6 h-6 mr-2" />
+            <div className="flex items-center justify-center text-4xl font-bold text-indigo-600 dark:text-indigo-400">
+              <MapPin className="w-8 h-8 mr-2" />
               {recommendation}
             </div>
           </div>

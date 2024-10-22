@@ -1,13 +1,28 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "WhereToGo",
   "private": true,
   "version": "0.0.0",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.luoboduner.where",
+    "files": [
+      "dist/**/*",
+      "main.js"
+    ],
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    }
   },
   "dependencies": {
     "i18next": "^23.16.2",
@@ -23,6 +38,8 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
+    "electron": "^33.0.2",
+    "electron-builder": "^25.1.8",
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",

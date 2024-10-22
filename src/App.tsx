@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Utensils, MapPin } from 'lucide-react';
 
-// 更新餐厅数据
 const restaurants = {
   building1: {
     B: [2, 3, 4, 5, 6],
@@ -34,25 +33,25 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 flex flex-col items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-xl p-8 max-w-md w-full">
-        <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">去哪吃</h1>
+    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-4">
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full">
+        <h1 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-6">去哪吃</h1>
         <div className="flex justify-center mb-6">
-          <Utensils className="w-16 h-16 text-indigo-500" />
+          <Utensils className="w-16 h-16 text-indigo-500 dark:text-indigo-300" />
         </div>
-        <p className="text-center text-gray-600 mb-6">
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-6">
           不知道午餐或晚餐吃什么？让我们帮你决定！
         </p>
         <button
           onClick={handleRecommend}
-          className="w-full bg-indigo-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+          className="w-full bg-indigo-600 dark:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
         >
           随机推荐
         </button>
         {recommendation && (
           <div className="mt-8 text-center">
-            <p className="text-lg font-semibold text-gray-800 mb-2">推荐地点：</p>
-            <div className="flex items-center justify-center text-2xl font-bold text-indigo-600">
+            <p className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">推荐地点：</p>
+            <div className="flex items-center justify-center text-2xl font-bold text-indigo-600 dark:text-indigo-400">
               <MapPin className="w-6 h-6 mr-2" />
               {recommendation}
             </div>

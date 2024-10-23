@@ -38,7 +38,7 @@ function App() {
   const handleRecommend = () => {
     setConfetti(true);
     setRecommendation(getRandomRestaurant());
-    setTimeout(() => setConfetti(false), 8000); // Confetti effect lasts for 3 seconds
+    setTimeout(() => setConfetti(false), 5000); // Confetti effect lasts for 3 seconds
   };
 
   return (

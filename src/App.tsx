@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Utensils, MapPin } from 'lucide-react';
-import Navbar from './components/Navbar'; // 引入导航栏组件
+import Navbar from './components/Navbar';
+import Confetti from 'react-confetti';
+import { useWindowSize } from 'react-use';
 
 const restaurants = {
   building1: {
@@ -19,6 +21,8 @@ const restaurants = {
 function App() {
   const { t, i18n } = useTranslation();
   const [recommendation, setRecommendation] = useState<string | null>(null);
+  const [confetti, setConfetti] = useState(false);
+  const { width, height } = useWindowSize();
 
   const getRandomRestaurant = () => {
     const building = Math.random() < 0.5 ? 'building1' : 'building2';
@@ -32,13 +36,15 @@ function App() {
   };
 
   const handleRecommend = () => {
+    setConfetti(true);
     setRecommendation(getRandomRestaurant());
+    setTimeout(() => setConfetti(false), 8000); // Confetti effect lasts for 3 seconds
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 dark:from-gray-800 dark:to-gray-900 flex flex-col items-center justify-center p-4">
-      <Navbar /> {/* 渲染导航栏组件 */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full mt-16"> {/* 添加 mt-16 以避免导航栏遮挡 */}
+      <Navbar />
+      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 max-w-md w-full mt-16">
         <h1 className="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-400 mb-6">{t('title')}</h1>
         <div className="flex justify-center mb-6">
           <Utensils className="w-16 h-16 text-indigo-500 dark:text-indigo-300" />
@@ -61,6 +67,7 @@ function App() {
           </div>
         )}
       </div>
+      {confetti && <Confetti width={width} height={height} />}
     </div>
   );
 }

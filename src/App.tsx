@@ -7,14 +7,14 @@ import { useWindowSize } from 'react-use';
 
 const restaurants = {
   building1: {
-    B: [2, 3, 4, 5, 6],
-    D: [3, 4],
-    F: [3, 4, 5]
+    B: ['2F', '3F', '4F', '5F', '6F'],
+    D: ['3F', '4F'],
+    F: ['3F', '4F', '5F']
   },
   building2: {
-    A: [3, 4, 5],
-    B: [3, 4, 5],
-    C: [3, 4]
+    A: ['3F', '4F', '5F'],
+    B: ['3F', '4F', '5F', '阿家', '紫光园'],
+    C: ['3F', '4F', 'MacDonalds','何贤记']
   }
 };
 
@@ -32,7 +32,7 @@ function App() {
     const randomSeat = seatKeys[Math.floor(Math.random() * seatKeys.length)];
     const floors = seats[randomSeat];
     const randomFloor = floors[Math.floor(Math.random() * floors.length)];
-    return `${buildingName}号楼 ${randomSeat}座 ${randomFloor}F`;
+    return `${buildingName}号楼 ${randomSeat}座 ${randomFloor}`;
   };
 
   const handleRecommend = () => {

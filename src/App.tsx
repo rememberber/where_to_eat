@@ -14,7 +14,8 @@ const restaurants = {
   building2: {
     A: ['3F', '4F', '5F'],
     B: ['3F', '4F', '5F', '阿家', '紫光园'],
-    C: ['3F', '4F', 'MacDonalds','何贤记']
+    C: ['3F', '4F', 'MacDonalds','何贤记'],
+    D: ['3F', '4F']
   }
 };
 
